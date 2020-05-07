@@ -1,0 +1,149 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-family: "Muli", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  width: 100%;
+  background-image: url(../../assets/wavy_bottom_background.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 80%;
+
+  &__title {
+    width: 85%;
+    margin: 50px 0 0 auto;
+    padding-left: 5%;
+    border-left: 2px solid white;
+    color: white;
+    font-size: 3.2rem;
+  }
+
+  &__picture {
+    display: block;
+    margin-top: 30px;
+    width: 100%;
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.pill-link {
+    display: block;
+    width: fit-content;
+    border: solid 2px white;
+    min-height: 40px;
+    border-radius: 20px;
+    padding: 8px;
+
+    &__link {
+      text-decoration: none;
+      color: white;
+      font-size: 1.6rem;
+    }
+
+    &--light {
+      background-color: white;
+
+      .pill-link__link {
+        color: rgba($color: #002cc8, $alpha: 0.57);
+      }
+    }
+
+    &--big {
+      padding-left: 24px;
+      padding-right: 24px;
+
+      .pill-link__link {
+        font-size: 1.8rem;
+      }
+    }
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 16px;
+  margin-right: 16px;
+
+  &__logo {
+    display: block;
+    width: 65px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-left: 16px;
+  }
+}
+
+.section {
+  &__header {
+    color: #4abddf;
+    font-size: 2.8rem;
+    margin: 16px 8px;
+  }
+
+  &__paragraph {
+    font-size: 1.6rem;
+    margin: 16px 8px;
+  }
+
+  &__link {
+    margin: 0 auto;
+  }
+
+  &--colored {
+    background-image: url(../../assets/wavy_top_background.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    .section__header {
+      padding-top: 32px;
+      color: white;
+    }
+
+    .section__paragraph {
+      color: white;
+    }
+  }
+  &__check-skin {
+    padding-bottom: 32px;
+  }
+}
+
+.footer {
+  margin: 8px auto;
+  color: #5F5F5F;
+  font-size: 1.4rem;
+  text-align: center;
+}
