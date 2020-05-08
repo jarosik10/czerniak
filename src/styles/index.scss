@@ -45,8 +45,7 @@ body {
 }
 
 .pill-link {
-    display: block;
-    width: fit-content;
+    display: inline-block;
     border: solid 2px white;
     min-height: 40px;
     border-radius: 20px;
@@ -80,8 +79,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 16px;
-  margin-right: 16px;
+  padding: 0 16px;
 
   &__logo {
     display: block;
@@ -117,6 +115,12 @@ body {
     text-align: justify;
     font-size: 1.6rem;
     margin: 16px;
+  }
+
+  &__link-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   &__link {
