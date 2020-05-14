@@ -47,33 +47,33 @@ body {
 }
 
 .pill-link {
-    display: inline-block;
-    border: solid 2px white;
-    border-radius: 999px;
-    padding: 8px;
+  display: inline-block;
+  border: solid 2px white;
+  border-radius: 999px;
+  padding: 8px;
 
-    &__link {
-      text-decoration: none;
-      color: white;
-      font-size: 1.6rem;
+  &__link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.6rem;
+  }
+
+  &--light {
+    background-color: white;
+
+    .pill-link__link {
+      color: rgba($color: #002cc8, $alpha: 0.57);
     }
+  }
 
-    &--light {
-      background-color: white;
+  &--big {
+    padding-left: 24px;
+    padding-right: 24px;
 
-      .pill-link__link {
-        color: rgba($color: #002cc8, $alpha: 0.57);
-      }
+    .pill-link__link {
+      font-size: 1.8rem;
     }
-
-    &--big {
-      padding-left: 24px;
-      padding-right: 24px;
-
-      .pill-link__link {
-        font-size: 1.8rem;
-      }
-    }
+  }
 }
 
 .navigation {
@@ -121,7 +121,7 @@ body {
     font-size: 1.6rem;
     padding: 0 16px;
     margin: 16px 0;
-    color: #5F5F5F;
+    color: #5f5f5f;
   }
 
   &__link-wrapper {
@@ -157,12 +157,15 @@ body {
 
   &__check-skin {
     padding-bottom: 32px;
+    .section__header {
+      text-align: center;
+    }
   }
 }
 
 .footer {
   margin: 8px auto;
-  color: #5F5F5F;
+  color: #5f5f5f;
   font-size: 1.4rem;
   text-align: center;
 }
@@ -192,7 +195,7 @@ body {
       padding: 0 32px;
       font-size: 3.2rem;
     }
-  
+
     &__paragraph {
       font-size: 1.8rem;
       margin: 16px 0;
@@ -254,7 +257,7 @@ body {
       }
     }
   }
-  
+
   .navigation {
     grid-area: nav;
     width: 100%;
@@ -280,7 +283,7 @@ body {
       align-items: center;
 
       .section__header {
-          margin-bottom: 0;
+        margin-bottom: 0;
       }
 
       .section__paragraph {
@@ -341,7 +344,7 @@ body {
 
   .navigation {
     max-width: 1220px;
-    padding: 16px 0; 
+    padding: 16px 0;
   }
 
   .section {
@@ -361,11 +364,10 @@ body {
         margin-left: auto;
         margin-right: auto;
       }
-      
+
       .section__header {
         font-size: 4.6rem;
       }
-      
     }
   }
 }
