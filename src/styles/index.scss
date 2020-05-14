@@ -16,11 +16,25 @@ body {
   padding: 0;
 }
 
+.picture {
+  display: block;
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
 .header {
   width: 100%;
   background-image: url(../../assets/wavy_bottom_background.svg);
   background-repeat: no-repeat;
   background-size: 100% 80%;
+
+  &__navigation {
+    padding: 0 16px;
+  }
 
   &__title {
     width: 85%;
@@ -32,15 +46,11 @@ body {
   }
 
   &__picture {
-    display: block;
     margin-top: 30px;
     width: 100%;
 
-    img {
-      display: block;
-      width: 100%;
+    .picture__img {
       max-width: 450px;
-      height: auto;
       margin: 0 auto;
     }
   }
@@ -76,44 +86,56 @@ body {
   }
 }
 
+.logo {
+  display: block;
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.list {
+  list-style: none;
+  display: flex;
+}
+
 .navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
 
   &__logo {
-    display: block;
     width: 65px;
-
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
   }
 
   &__list {
-    list-style: none;
-    display: flex;
     margin: 0;
     padding: 0;
-  }
 
-  &__item {
-    margin-left: 16px;
+    .list__item {
+      margin-left: 16px;
+    }
+  }
+}
+
+.link-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__link {
+    margin: 0 auto;
   }
 }
 
 .section {
-  margin-top: 32px;
-
   &__header {
     color: #4abddf;
     font-size: 2.8rem;
     width: 100%;
     padding: 0 16px;
-    margin: 16px 0;
+    margin: 32px 0 16px 0;
   }
 
   &__paragraph {
@@ -122,16 +144,6 @@ body {
     padding: 0 16px;
     margin: 16px 0;
     color: #5f5f5f;
-  }
-
-  &__link-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  &__link {
-    margin: 0 auto;
   }
 
   &--colored {
@@ -149,13 +161,13 @@ body {
     }
   }
 
-  &__about-skin {
+  &--about-skin {
     .section__picture {
       display: none;
     }
   }
 
-  &__check-skin {
+  &--check-skin {
     padding-bottom: 32px;
     .section__header {
       text-align: center;
@@ -175,11 +187,13 @@ body {
     &__title {
       font-size: 3.8rem;
     }
+
+    &__navigation {
+      padding: 16px 32px;
+    }
   }
 
   .navigation {
-    padding: 16px 32px;
-
     &__logo {
       width: 80px;
     }
@@ -191,7 +205,7 @@ body {
 
   .section {
     &__header {
-      margin: 32px 0;
+      margin: 48px 0 32px 0;
       padding: 0 32px;
       font-size: 3.2rem;
     }
@@ -202,11 +216,11 @@ body {
       padding: 0 32px;
     }
 
-    &__link {
+    &__link-wrapper {
       margin-top: 32px;
     }
 
-    &__check-skin {
+    &--check-skin {
       .section__header {
         font-size: 3.8rem;
         text-align: center;
@@ -241,6 +255,12 @@ body {
       font-size: 4.2rem;
       margin: 50px 0 0 0;
     }
+
+    &__navigation {
+      grid-area: nav;
+      width: 100%;
+      justify-self: center;
+    }
   }
 
   .pill-link {
@@ -259,10 +279,6 @@ body {
   }
 
   .navigation {
-    grid-area: nav;
-    width: 100%;
-    justify-self: center;
-
     &__logo {
       width: 95px;
     }
@@ -270,6 +286,7 @@ body {
 
   .section {
     &__header {
+      margin: 64px 0 32px 0;
       font-size: 3.8rem;
     }
 
@@ -277,7 +294,7 @@ body {
       font-size: 2.4rem;
     }
 
-    &__about-skin {
+    &--about-skin {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -292,20 +309,17 @@ body {
       }
 
       .section__picture {
-        display: flex;
-        // width: calc(50% - 64px);
+        display: block;
         width: 50%;
 
-        img {
-          width: 40%;
+        .picture__img {
           max-width: 210px;
-          height: auto;
           margin: 0 auto;
         }
       }
     }
 
-    &__check-skin {
+    &--check-skin {
       .section__header {
         font-size: 4.2rem;
       }
@@ -325,6 +339,11 @@ body {
     &__title {
       font-size: 5rem;
     }
+
+    &__navigation {
+      max-width: 1220px;
+      padding: 16px 0;
+    }
   }
 
   .pill-link {
@@ -342,23 +361,18 @@ body {
     }
   }
 
-  .navigation {
-    max-width: 1220px;
-    padding: 16px 0;
-  }
-
   .section {
     &__header {
       font-size: 4.2rem;
     }
 
-    &__about-skin {
+    &--about-skin {
       max-width: 1220px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    &__check-skin {
+    &--check-skin {
       .section__paragraph {
         max-width: 1220px;
         margin-left: auto;
