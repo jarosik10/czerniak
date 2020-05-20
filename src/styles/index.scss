@@ -18,9 +18,6 @@ body {
 
 .header {
   width: 100%;
-  background-image: url(../../assets/wavy_bottom_background.svg);
-  background-repeat: no-repeat;
-  background-size: 100% 80%;
 
   &__navigation {
     padding: 0 16px;
@@ -49,7 +46,13 @@ body {
     }
   }
 
-  &--half-wave {
+  &--huge-wave {
+    background-image: url(../../assets/wavy_bottom_background.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 80%;
+  }
+
+  &--medium-wave {
     background-image: url(../../assets/half_wavy_top_background.svg);
     background-repeat: no-repeat;
     background-size: 100% 80px;
@@ -105,30 +108,27 @@ body {
 }
 
 .pill-link {
-  display: inline-block;
-  border: solid 2px white;
-  border-radius: 999px;
-  padding: 8px;
-
   &__link {
+    display: block;
     text-decoration: none;
     color: white;
     font-size: 1.6rem;
+    border: solid 2px white;
+    border-radius: 999px;
+    padding: 8px;
   }
 
   &--light {
-    background-color: white;
-
     .pill-link__link {
+      background-color: white;
       color: rgba($color: #002cc8, $alpha: 0.57);
     }
   }
 
   &--big {
-    padding-left: 24px;
-    padding-right: 24px;
-
     .pill-link__link {
+      padding-left: 24px;
+      padding-right: 24px;
       font-size: 1.8rem;
     }
   }
@@ -146,16 +146,6 @@ body {
 .list {
   list-style: none;
   display: flex;
-}
-
-.link-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-
-  &__link {
-    margin: 0 auto;
-  }
 }
 
 .section {
@@ -207,6 +197,12 @@ body {
   //     color: #4eafde;
   //   }
   // }
+
+  &__link-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .footer {
@@ -225,12 +221,12 @@ body {
     .button-wrapper__button {
       font-size: 1.8rem;
       padding: 10px 48px;
-      background-color: #4EB2DE;
+      background-color: #4eb2de;
       color: white;
       border: none;
       border-radius: 999px;
       font-family: inherit;
-    }   
+    }
   }
 }
 .field {
@@ -247,7 +243,7 @@ body {
     border-radius: 999px;
     width: calc(100% - 48px);
     margin: 0 16px;
-    color: #5F5F5F;
+    color: #5f5f5f;
     outline: none;
   }
 
@@ -256,7 +252,7 @@ body {
     left: 42px;
     font-size: 1.6rem;
     color: rgba(0, 0, 0, 0.5);
-    transition: transform .2s ease-out;
+    transition: transform 0.2s ease-out;
   }
 
   &--active {
@@ -266,12 +262,13 @@ body {
     }
   }
 
-  &--active, &--filled {
+  &--active,
+  &--filled {
     .field__label {
       font-size: 1.2rem;
       font-weight: bold;
       // color: rgba($color: #002cc8, $alpha: 0.57);
-      color: #549EDD;
+      color: #549edd;
       background-color: white;
       padding: 2px 6px 0 6px;
       transform: translateY(-150%);
@@ -302,7 +299,7 @@ body {
     }
   }
 
-  .pill-link {
+  .pill-link__link {
     padding: 8px 16px;
   }
 
@@ -337,7 +334,7 @@ body {
 }
 
 @media (min-width: 991px) {
-  .header {
+  .header--main-page {
     display: grid;
     grid-template-columns: 3fr 5fr;
     grid-template-rows: auto;
@@ -346,12 +343,12 @@ body {
       "image header"
       "image .";
 
-    &__picture {
+    .header__picture {
       grid-area: image;
       justify-self: end;
     }
 
-    &__title {
+    .header__title {
       grid-area: header;
       align-self: start;
       justify-self: start;
@@ -359,7 +356,7 @@ body {
       margin: 50px 0 0 0;
     }
 
-    &__navigation {
+    .header__navigation {
       grid-area: nav;
       width: 100%;
       justify-self: center;
@@ -372,10 +369,9 @@ body {
     }
 
     &--big {
-      padding-left: 34px;
-      padding-right: 34px;
-
       .pill-link__link {
+        padding-left: 34px;
+        padding-right: 34px;
         font-size: 2.4rem;
       }
     }
@@ -431,7 +427,7 @@ body {
 }
 
 @media (min-width: 1284px) {
-  .header {
+  .header--main-page {
     grid-template-columns: 1fr 490px 730px 1fr;
     grid-template-rows: auto;
     grid-template-areas:
@@ -439,11 +435,11 @@ body {
       ". image header ."
       ". image . .";
 
-    &__title {
+    .header__title {
       font-size: 5rem;
     }
 
-    &__navigation {
+    .header__navigation {
       max-width: 1220px;
       padding: 16px 0;
     }
@@ -455,10 +451,9 @@ body {
     }
 
     &--big {
-      padding-left: 34px;
-      padding-right: 34px;
-
       .pill-link__link {
+        padding-left: 34px;
+        padding-right: 34px;
         font-size: 2.4rem;
       }
     }
