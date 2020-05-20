@@ -46,35 +46,16 @@ body {
     }
   }
 
-  &--huge-wave {
+  &--huge-top-wave {
     background-image: url(../../assets/wavy_bottom_background.svg);
     background-repeat: no-repeat;
     background-size: 100% 80%;
   }
 
-  &--medium-wave {
+  &--medium-top-wave {
     background-image: url(../../assets/half_wavy_top_background.svg);
     background-repeat: no-repeat;
     background-size: 100% 80px;
-  }
-}
-
-.title {
-  color: #4eafde;
-
-  &--light {
-    color: white;
-  }
-
-  &--speech {
-    padding: 0;
-    padding-left: 5%;
-    border-left: 2px solid currentColor;
-    text-align: left;
-  }
-
-  &--small {
-    font-size: 2.4rem;
   }
 }
 
@@ -156,6 +137,12 @@ body {
     margin: 32px 0 16px 0;
   }
 
+  .title--speech {
+    width: 85%;
+    margin: 32px 16px 16px auto;
+    font-size: 2.4rem;;
+  }
+
   &__paragraph {
     text-align: justify;
     font-size: 1.6rem;
@@ -164,7 +151,7 @@ body {
     color: #5f5f5f;
   }
 
-  &--colored {
+  &--huge-bottom-wave {
     background-image: url(../../assets/wavy_top_background.svg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -176,6 +163,13 @@ body {
     .section__paragraph {
       color: white;
     }
+  }
+
+  &--medium-bottom-wave {
+    background-image: url(../../assets/half_wavy_bottom_background.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 80px;
+    background-position: bottom;
   }
 
   &--about-skin {
@@ -191,17 +185,53 @@ body {
     }
   }
 
-  // &--login {
-  //   .section__header {
-  //     text-align: center;
-  //     color: #4eafde;
-  //   }
-  // }
+  &--login {
+    .section__picture {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
 
   &__link-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+
+  &__form-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .form-options__link {
+      display: block;
+      font-size: 1.6rem;
+      text-decoration: none;
+      color: #549EDD;
+    }
+
+    .form-options__link:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.title {
+  color: #4eafde;
+
+  &--light {
+    color: white;
+  }
+
+  &--speech {
+    padding: 0;
+    padding-left: 5%;
+    border-left: 2px solid currentColor;
+    text-align: left;
+  }
+
+  &--small {
+    font-size: 2.4rem;
   }
 }
 
