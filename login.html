@@ -13,21 +13,21 @@
 </head>
 
 <body>
-  <header class="header header--medium-top-wave">
+  <header class="header header--login header--medium-top-wave">
     <nav class="header__navigation navigation">
       <a class="navigation__logo logo" href="./"><img class="logo__img" src="./assets/logo.png"></a>
     </nav>
-    <h1 class="header__title title">ZALOGUJ SIĘ</h1>
   </header>
   <section class="section section--login section--medium-bottom-wave">
+    <h1 class="section__title title">ZALOGUJ SIĘ</h1>
     <form class="section__form form">
       <div class="form__field field">
-        <input class="field__input" type="email">
-        <label class="field__label">E-mail</label>
+        <input class="field__input" type="email" id='email' >
+        <label class="field__label" for='email'>E-mail</label>
       </div>
       <div class="form__field field">
-        <input class="field__input" type="password">
-        <label class="field__label">Hasło</label>
+        <input class="field__input" type="password" id='password'>
+        <label class="field__label" for='password'>Hasło</label>
       </div>
       <div class="form__button-wrapper button-wrapper">
         <button class="button-wrapper__button">OK</button>
@@ -37,7 +37,7 @@
       <a href="#rejestracja" class="form-options__link">Nie masz konta? Zarejestruj się!</a>
       <a href="#przymonij-haslo" class="form-options__link">Nie pamiętam hasła</a>
     </div>
-    <h2 class="section__title title title--speech ">Zaloguj się, aby zbadać swoją zmianę skórną</h2>
+    <h2 class="section__subtitle title title--speech ">Zaloguj się, aby zbadać swoją zmianę skórną</h2>
     <picture class="section__picture picture">
       <img class="picture__img" src="./assets/doctor.png" alt="Doctor.">
     </picture>
