@@ -7,18 +7,31 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Czerniak</title>
-  <script defer src="src/js/index.js"></script>
+  <script defer src="src/js/forms.js"></script>
+  <script defer src="src/js/navigation.js"></script>
   <link href="dist/styles/index.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header class="header header--login header--medium-top-wave">
+  <header class="header header--medium-top-left-wave">
     <nav class="header__navigation navigation">
-      <a class="navigation__logo logo" href="./"><img class="logo__img" src="./assets/logo.png"></a>
+      <a class="navigation__site-branding site-branding" href="./">
+        <img class="site-branding__logo" src="./assets/logo.png">
+        <h1 class="site-branding__name brand-name"><span class="brand-name__start">Skin</span><span
+            class="brand-name__end">Detector</span></h1>
+      </a>
+      <button class="navigation__opener"></button>
+      <ul class="navigation__list list">
+        <li class="list__item navigation-item"><a class="navigation-item__link" href='./login.html'>Logowanie</a></li>
+        <li class="list__item navigation-item"><a class="navigation-item__link" href='./register.html'>Rejestracja</a>
+        </li>
+        <li class="list__item navigation-item"><a class="navigation-item__link" href='./'>O stronie</a></li>
+        <li class="list__item navigation-item"><a class="navigation-item__link" href='./'>Regulacje</a></li>
+      </ul>
     </nav>
   </header>
-  <section class="section section--login section--medium-bottom-wave">
+  <section class="section section--sign-in-up section--medium-bottom-left-wave">
     <h1 class="section__title title">ZALOGUJ SIĘ</h1>
     <form class="section__form form">
       <div class="form__field field">
@@ -37,7 +50,7 @@
       <a href="./register.html" class="form-options__link">Nie masz konta? Zarejestruj się!</a>
       <a href="#przymonij-haslo" class="form-options__link">Nie pamiętam hasła</a>
     </div>
-    <h2 class="section__subtitle title title--speech ">Zaloguj się, aby zbadać swoją zmianę skórną</h2>
+    <p class="section__subtitle title title--speech ">Zaloguj się, aby zbadać swoją zmianę skórną</p>
     <picture class="section__picture picture">
       <img class="picture__img" src="./assets/doctor.png" alt="Doctor.">
     </picture>
