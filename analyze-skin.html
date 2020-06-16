@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
 
 <head>
@@ -7,13 +7,14 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Czerniak</title>
+  <script defer src="src/js/analyze-skin.js"></script>
   <script defer src="src/js/navigation.js"></script>
   <link href="dist/styles/index.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header class="header header--main-page header--huge-top-wave">
+  <header class="header header--small-top-left-wave">
     <nav class="header__navigation navigation">
       <a class="navigation__site-branding site-branding" href="./">
         <img class="site-branding__logo" src="./assets/logo.png">
@@ -29,32 +30,25 @@
         <li class="list__item navigation-item"><a class="navigation-item__link" href='./'>Regulacje</a></li>
       </ul>
     </nav>
-    <p class="header__title title title--light title--speech">JAK DOBRZE ZNASZ WŁASNĄ SKÓRĘ?</p>
-    <picture class="header__picture picture">
+  </header>
+  <section class="section section--analyze-skin section--medium-bottom-left-wave">
+    <h1 class="section__title title">1. KROK</h1>
+    <form class="section__form form">
+      <div class="form__field file-field">
+        <button class='file-field__button'></button>
+        <label class="file-field__label" for="skin-photo">Dodaj zdjęcie zmiany skórnej</label>
+        <input class="file-field__input" type="file" id="skin-photo" accept=".jpg, .jpeg, .png">
+      </div>
+    </form>
+    <div class="section__form-options form-options">
+      <a href="#Instrukcja" class="form-options__link">Instrukcja</a>
+    </div>
+    <p class="section__subtitle title title--speech ">Zaczynamy!</p>
+    <picture class="section__picture picture">
       <img class="picture__img" src="./assets/doctor.png" alt="Doctor.">
     </picture>
-  </header>
-  <section class="section section--about-skin">
-    <h2 class="section__title title">Skóra to twój największy organ.</h2>
-    <p class="section__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cumque beatae in.
-      Magnam, iusto quisquam! Minima
-      doloribus earum, ea corrupti nisi ullam corporis eveniet perspiciatis nam labore excepturi mollitia vitae?</p>
-    <picture class="section__picture picture">
-      <img class="picture__img" src="./assets/skin.png" alt="Skin.">
-    </picture>
-  </section>
-  <section class="section section--huge-bottom-wave section--check-skin">
-    <h2 class="section__title title--light">Sprawdź swoją skórę!</h2>
-    <p class="section__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cumque beatae in.
-      Magnam, iusto quisquam! Minima
-      doloribus earum, ea corrupti nisi ullam corporis eveniet perspiciatis nam labore excepturi mollitia vitae?</p>
-    <div class="section__link-wrapper pill-link pill-link--light pill-link--big">
-      <a class="pill-link__link" href='./register.html'>Przekonaj się</a>
-    </div>
   </section>
   <footer class="footer">
     Copyright © 2020 NAZWA PRODUKTU
   </footer>
 </body>
-
-</html>

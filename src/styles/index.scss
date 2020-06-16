@@ -65,6 +65,22 @@ body {
     background-size: 85% 100px;
   }
 
+  @mixin small-top-left-wave {
+    background-image: url(../../assets/small_top_left_wave_background.svg);
+    background-repeat: no-repeat;
+    background-size: 85% 100px;
+  }
+
+  @mixin white-background-menu {
+    .navigation__list {
+      background-color: white;
+    }
+
+    .navigation-item__link {
+      color: #4eafde;
+    }
+  }
+
   &--huge-top-wave {
     @include huge-top-wave;
 
@@ -85,13 +101,20 @@ body {
       }
     }
 
-    .navigation__list {
-      background-color: white;
+    @include white-background-menu;
+  }
+
+  &--small-top-left-wave {
+    @include small-top-left-wave;
+    min-height: 100px;
+
+    .navigation {
+      &__backdrop {
+        @include small-top-left-wave;
+      }
     }
 
-    .navigation-item__link {
-      color: #4eafde;
-    }
+    @include white-background-menu;
   }
 }
 
@@ -183,7 +206,7 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: calc(100vh - 100%);
     background-color: white;
   }
@@ -371,6 +394,14 @@ body {
     background-position: bottom;
   }
 
+  &--big-bottom-right-wave {
+    background-image: url(../../assets/big_bottom_right_wave_background.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 110px;
+    background-position: bottom;
+    padding-bottom: 110px;
+  }
+
   &--about-skin {
     .section__picture {
       display: none;
@@ -396,27 +427,138 @@ body {
     }
   }
 
+  &--launchpad {
+    position: relative;
+
+    .section__subtitle {
+      display: none;
+    }
+
+    .section__picture {
+      display: none;
+    }
+
+    .section__absolute-link {
+      position: absolute;
+      bottom: 50px;
+      right: 40px;
+      transform: translateY(50%);
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+      max-width: 30%;
+      text-align: right;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: white;
+        width: 29px;
+        height: 4px;
+        right: -30px;
+        border-radius: 2px;
+      }
+      &::before {
+        transform: translateY(-50%) rotate(45deg);
+        transform-origin: bottom right;
+        top: calc(50% + 0.5px);
+      }
+
+      &::after {
+        transform: translateY(-50%) rotate(-45deg);
+        transform-origin: top right;
+        top: calc(50% - 0.5px);
+      }
+    }
+  }
+
+  &--analyze-skin {
+    .section__title {
+      font-size: 3.2rem;
+      text-align: center;
+      margin: 32px 0;
+    }
+
+    .section__subtitle {
+      width: 65%;
+    }
+
+    .section__picture {
+      width: 40%;
+      max-width: 170px;
+      margin: 0 auto;
+    }
+
+    .section__form-options {
+      display: none; 
+      margin: 32px 0;
+
+      .form-options__link {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
   &__link-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
   }
+}
 
-  &__form-options {
+.form-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__link {
+    display: block;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #549edd;
+  }
+
+  &__link:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.launchpad-options {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  // flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    margin-bottom: 16px;
+  }
 
-    .form-options__link {
-      display: block;
-      font-size: 1.6rem;
-      text-decoration: none;
-      color: #549edd;
-    }
+  &__item:last-of-type {
+    margin-bottom: unset;
+  }
+}
 
-    .form-options__link:not(:last-child) {
-      margin-bottom: 20px;
-    }
+.launchpad-item {
+  &__image {
+    width: 120px;
+    height: 120px;
+  }
+
+  &__name {
+    margin-top: 16px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #4eafde;
+    font-weight: bold;
+    max-width: 70%;
   }
 }
 
@@ -440,11 +582,13 @@ body {
 }
 
 .footer {
-  margin: 8px auto;
+  width: 100%;
+  margin: 8px 0;
   color: #5f5f5f;
   font-size: 1.4rem;
   text-align: center;
 }
+
 .form {
   &__field {
     margin: 20px auto;
@@ -503,12 +647,39 @@ body {
     .field__label {
       font-size: 1.2rem;
       font-weight: bold;
-      // color: rgba($color: #002cc8, $alpha: 0.57);
       color: #549edd;
       background-color: white;
       padding: 2px 6px 0 6px;
       transform: translateY(-150%);
     }
+  }
+}
+
+.file-field {
+  display: flex;
+  justify-content: center;
+
+  &__label {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #4eafde;
+    margin: auto 0 auto 16px;
+    width: 50%;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__button {
+    background: url(../../assets/launchpad_add.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 60px;
+    height: 60px;
+    border: none;
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -530,6 +701,11 @@ body {
 
     &--medium-top-left-wave {
       background-size: 90% 112px;
+      min-height: 112px;
+    }
+
+    &--small-top-left-wave {
+      background-size: 70% 112px;
       min-height: 112px;
     }
   }
@@ -575,6 +751,11 @@ body {
       background-size: 100% 112px;
     }
 
+    &--big-bottom-right-wave {
+      background-size: 100% 140px;
+      padding-bottom: unset;
+    }
+
     &--check-skin {
       .section__title {
         font-size: 3.8rem;
@@ -595,6 +776,98 @@ body {
         max-width: 210px;
       }
     }
+
+    &--launchpad {
+      display: grid;
+      grid-template-columns: 2fr 2fr 7fr;
+      grid-template-rows: 2fr 1fr 1fr;
+      // row-gap: 20px;
+      grid-template-areas:
+        "pad pad pad"
+        "img speech ."
+        "img . .";
+      min-height: calc(100vh - 112px);
+
+      .section__subtitle {
+        display: block;
+        grid-area: speech;
+        align-self: center;
+      }
+
+      .section__picture {
+        display: block;
+        grid-area: img;
+        align-self: end;
+        max-width: 140px;
+        margin-left: auto;
+        margin-bottom: 16px;
+      }
+
+      .section__absolute-link {
+        font-size: 2.1rem;
+        max-width: 20%;
+        right: 50px;
+        bottom: 60px;
+
+        &::before,
+        &::after {
+          width: 36px;
+          height: 4px;
+          right: -37px;
+        }
+      }
+    }
+
+    &--analyze-skin {
+      display: grid;
+      grid-template-columns: 1fr 1fr 3fr;
+      grid-template-rows: 2fr 1fr 89px 3fr;
+      grid-template-areas:
+        ". . title"
+        "speech . form"
+        "img . form-options"
+        "img . .";
+      min-height: calc(100vh - 112px);
+
+      .section__title {
+        grid-area: title;
+        margin: 0 0 32px 0;
+        align-self: end;
+        font-size: 3.8rem;
+      }
+
+      .section__subtitle {
+        grid-area: speech;
+        align-self: end;
+        width: 85%;
+        margin: 32px 16px 0 auto;
+      }
+
+      .section__picture {
+        grid-area: img;
+        width: 100%;
+        align-self: end;
+        margin: 0 0 16px auto;
+        max-width: 200px;
+      }
+
+      .section__form {
+        grid-area: form;
+      }
+
+      .section__form-options {
+        grid-area: form-options;
+        align-self: center;
+
+        .form-options__link {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  .launchpad-options {
+    grid-area: pad;
   }
 }
 
@@ -633,6 +906,12 @@ body {
       background-size: 70% 180px;
       min-height: 180px;
     }
+
+    &--small-top-left-wave {
+      background-size: 50% 160px;
+      min-height: 160px;
+    }
+
     .title--speech {
       width: 70%;
     }
@@ -754,6 +1033,10 @@ body {
       background-size: 100% 160px;
     }
 
+    &--big-bottom-right-wave {
+      background-size: 100% 220px;
+    }
+
     &--check-skin {
       .section__title {
         font-size: 4.2rem;
@@ -799,6 +1082,60 @@ body {
         margin: 32px 0;
       }
     }
+
+    &--launchpad {
+      min-height: calc(100vh - 160px);
+
+      .section__subtitle {
+        margin-top: 0;
+      }
+
+      .section__picture {
+        max-width: 150px;
+      }
+
+      .section__absolute-link {
+        font-size: 2.8rem;
+        max-width: 20%;
+        right: 75px;
+        bottom: 95px;
+
+        &::before,
+        &::after {
+          width: 48px;
+          height: 5px;
+          right: -52px;
+        }
+      }
+    }
+
+    &--analyze-skin {
+      min-height: calc(100vh - 160px);
+      grid-template-areas:
+      ". . title"
+      "img . form"
+      "img speech form-options"
+      "img . .";
+      
+      .section__title {
+        font-size: 4.2rem;
+      }
+
+      .section__subtitle {
+        align-self: center;
+      }
+    }
+  }
+
+  .launchpad-options {
+    &__item {
+      margin-bottom: unset;
+      margin-right: 16px;
+    }
+
+    &__item:last-of-type {
+      margin-right: unset;
+    }
   }
 
   .field {
@@ -812,11 +1149,23 @@ body {
       font-size: 1.8rem;
     }
   }
+
   .form {
     &__button-wrapper {
       .button-wrapper__button {
         font-size: 2rem;
       }
+    }
+  }
+
+  .file-field {
+    &__label {
+      font-size: 2.4rem;
+    }
+
+    &__button {
+      width: 65px;
+      height: 65px;
     }
   }
 }
@@ -839,6 +1188,11 @@ body {
     &--medium-top-left-wave {
       background-size: 70% 250px;
       min-height: 250px;
+    }
+
+    &--small-top-left-wave {
+      background-size: 40% 190px;
+      min-height: 190px;
     }
   }
 
@@ -937,8 +1291,66 @@ body {
       }
     }
 
+    &--launchpad {
+      min-height: calc(100vh - 190px);
+      grid-template-columns: 1fr 1fr 5fr;
+
+      .section__subtitle {
+        font-size: 3rem;
+      }
+
+      .section__picture {
+        max-width: 160px;
+      }
+
+      .section__absolute-link {
+        font-size: 3.4rem;
+        max-width: 17%;
+        right: 100px;
+        bottom: 120px;
+
+        &::before,
+        &::after {
+          width: 62px;
+          height: 5px;
+          right: -70px;
+        }
+      }
+    }
+
+    &--analyze-skin {
+      min-height: calc(100vh - 190px);
+
+      .section__title {
+        font-size: 5rem;
+      }
+
+      .section__form-options {
+        
+        .form-options__link {
+          font-size: 2.2rem;
+        }
+      }
+    }
+
     &--medium-bottom-left-wave {
       background-size: 100% 220px;
+    }
+
+    &--big-bottom-right-wave {
+      background-size: 100% 290px;
+    }
+  }
+
+  .launchpad-item {
+    &__image {
+      width: 160px;
+      height: 160px;
+    }
+
+    &__name {
+      margin-top: 20px;
+      font-size: 2.4rem;
     }
   }
 
