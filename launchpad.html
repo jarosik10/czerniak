@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Czerniak</title>
     <script defer src="src/js/navigation.js"></script>
@@ -16,12 +15,13 @@
     <header class="header header--small-top-left-wave">
         <nav class="header__navigation navigation">
             <a class="navigation__site-branding site-branding" href="./">
-                <img class="site-branding__logo" src="./assets/logo.png">
+                <img class="site-branding__logo" alt="Logo" src="./assets/logo.png">
                 <h1 class="site-branding__name brand-name"><span class="brand-name__start">Skin</span><span
                         class="brand-name__end">Detector</span></h1>
             </a>
-            <button class="navigation__opener"></button>
+            <button class="navigation__opener" aria-label="Open navigation menu"></button>
             <ul class="navigation__list list">
+                <li class="list__item navigation-item"><a class="navigation-item__link" href='./launchpad.html'>Panel główny</a></li>
                 <li class="list__item navigation-item"><a class="navigation-item__link" href='./login.html'>Logowanie</a></li>
                 <li class="list__item navigation-item"><a class="navigation-item__link" href='./register.html'>Rejestracja</a></li>
                 <li class="list__item navigation-item"><a class="navigation-item__link" href='./'>O stronie</a></li>
